@@ -95,6 +95,7 @@ pub struct CloseActivityRequestArgs {
 }
 
 /// <https://github.com/Khaomi/discord-rpc/blob/3a2d794abb74239f6608565a520f29d0c6e98247/src/structures/ClientUser.ts#L397>
+#[skip_serializing_none]
 #[derive(Serialize, Deserialize, Debug)]
 pub struct ToggleScreenshareArgs {
     /// integer - PID of the application to be shared, if any
