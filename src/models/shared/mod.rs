@@ -7,5 +7,5 @@ pub mod voice;
 
 pub use channel::{Channel, ChannelType};
 pub use guild::Guild;
-pub use message::{Message, MessageType};
+pub use message::{Message, MessageType, NotificationMessage};
 pub use user::User;

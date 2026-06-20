@@ -1,4 +1,4 @@
-use crate::models::shared::{Guild, Message, User, voice::VoicePan};
+use crate::models::shared::{Guild, Message, NotificationMessage, User, voice::VoicePan};
 
 use serde::{Deserialize, Serialize};
 
@@ -163,7 +163,7 @@ pub struct NotificationCreateData {
     /// string - id of channel where notification occurred
     pub channel_id: String,
     /// message object - message that generated this notification
-    pub message: Message,
+    pub message: NotificationMessage,
     /// string - icon url of the notification
     pub icon_url: String,
     /// string - title of the notification

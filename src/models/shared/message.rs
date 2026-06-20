@@ -69,3 +69,26 @@ pub struct Message {
     #[serde(rename = "type")]
     pub message_type: MessageType,
 }
+
+/// <https://docs.discord.com/developers/topics/rpc#notification_create>
+#[derive(Serialize, Deserialize, Debug)]
+pub struct NotificationMessage {
+    /// snowflake - id of the message
+    pub id: String,
+    /// user object - the author of this message (not guaranteed to be a valid user, see below)
+    pub author: User,
+    /// string - contents of the message
+    pub content: Option<String>,
+    /// ISO8601 timestamp - when this message was sent
+    pub timestamp: String,
+    /// ?ISO8601 timestamp - when this message was edited (or null if never)
+    pub edited_timestamp: Option<String>,
+    /// boolean - whether this was a TTS message
+    pub tts: bool,
+    /// boolean - whether this message mentions everyone
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub mention_everyone: Option<bool>,
+    /// integer - type of message
+    #[serde(rename = "type")]
+    pub message_type: MessageType,
+}
